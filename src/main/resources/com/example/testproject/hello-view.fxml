@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="446.0" prefWidth="545.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.testproject.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-
-    <Label fx:id="welcomeText" />
-    <Button onAction="#onHelloButtonClick" text="Hello!" />
-</VBox>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #808080; -fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 5px; -fx-border-style: solid;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Pane prefHeight="600.0" prefWidth="176.0" style="-fx-background-color: #C0C0C0; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 2px; -fx-border-style: solid;">
+            <children>
+                <Button layoutX="3.0" layoutY="150.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" style="-fx-background-color: #FFD700;" text="Добавить тренировку" textAlignment="CENTER" textOverrun="CLIP">
+                    <font>
+                        <Font name="Calibri" size="14.0" />
+                    </font>
+                </Button>
+                <Button layoutX="2.0" layoutY="256.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" style="-fx-background-color: #FFD700;" text="Удалить тренировку">
+                    <font>
+                        <Font name="Calibri" size="14.0" />
+                    </font>
+                </Button>
+                <Button layoutX="1.0" layoutY="318.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" style="-fx-background-color: #FFD700;" text="Статистика">
+                    <font>
+                        <Font name="Calibri" size="14.0" />
+                    </font>
+                </Button>
+                <Label layoutX="16.0" layoutY="469.0" prefHeight="17.0" prefWidth="164.0" text="               Связь с нами" textAlignment="CENTER" />
+                <Button layoutX="14.0" layoutY="494.0" mnemonicParsing="false" style="-fx-background-color: #00FFFF;" text="➣" />
+            <Button layoutX="3.0" layoutY="202.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="173.0" text="Измеить тренировку" />
+            </children></Pane>
+        <Pane layoutX="176.0" prefHeight="70.0" prefWidth="624.0" style="-fx-background-color: #C0C0C0; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 2px; -fx-border-style: solid;">
+            <children>
+                <Label layoutX="91.0" layoutY="16.0" prefHeight="46.0" prefWidth="388.0" text="Главное меню">
+                    <font>
+                        <Font name="Calibri" size="20.0" />
+                    </font>
+                </Label>
+            </children></Pane>
+      <TableView layoutX="243.0" layoutY="101.0" prefHeight="426.0" prefWidth="490.0">
+        <columns>
+          <TableColumn prefWidth="489.0" text="Дата тренировки" />
+        </columns>
+      </TableView>
+    </children>
+</Pane>
