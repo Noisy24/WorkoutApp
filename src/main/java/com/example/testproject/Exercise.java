@@ -1,5 +1,7 @@
 package com.example.testproject;
 
+import javafx.scene.control.TextField;
+
 public class Exercise {
     private String name;
     private int sets;
@@ -11,6 +13,14 @@ public class Exercise {
         this.sets = sets;
         this.reps = reps;
         this.weight = weight;
+    }
+
+    public Exercise(TextField name, TextField sets, TextField reps, TextField weight) {
+        this.name = name.getText();
+        this.sets = Integer.parseInt(sets.getText());
+        this.reps = Integer.parseInt(reps.getText());
+        this.weight = Double.parseDouble(weight.getText());
+
     }
 
     public String getName() { return name; }

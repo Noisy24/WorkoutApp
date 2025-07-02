@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testproject.AddWorkout">
    <children>
-      <Button layoutX="335.0" layoutY="361.0" mnemonicParsing="false" text="Назад" />
+      <Button layoutX="335.0" layoutY="361.0" mnemonicParsing="false" onAction="#back" text="Назад" />
       <HBox layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="320.0">
          <children>
             <Label prefHeight="25.0" prefWidth="158.0" text="Дата тренировки">
@@ -14,7 +14,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <DatePicker prefHeight="25.0" prefWidth="167.0" />
+            <DatePicker fx:id="datePicker" prefHeight="25.0" prefWidth="167.0" />
          </children>
       </HBox>
       <HBox layoutX="14.0" layoutY="64.0" prefHeight="25.0" prefWidth="320.0">
@@ -24,7 +24,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="163.0" text="название" />
+            <TextField fx:id="workoutType" prefHeight="25.0" prefWidth="163.0" text="название" />
          </children>
       </HBox>
       <HBox layoutX="14.0" layoutY="164.0" prefHeight="25.0" prefWidth="320.0">
@@ -34,7 +34,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="163.0" text="название" />
+            <TextField fx:id="name" prefHeight="25.0" prefWidth="163.0" text="название" />
          </children>
       </HBox>
       <HBox layoutX="14.0" layoutY="213.0" prefHeight="25.0" prefWidth="320.0">
@@ -44,7 +44,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="164.0" text="число" />
+            <TextField fx:id="sets" prefHeight="25.0" prefWidth="164.0" text="число" />
          </children>
       </HBox>
       <HBox layoutX="14.0" layoutY="263.0" prefHeight="25.0" prefWidth="320.0">
@@ -54,7 +54,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="168.0" text="число" />
+            <TextField fx:id="reps" prefHeight="25.0" prefWidth="168.0" text="число" />
          </children>
       </HBox>
       <HBox layoutX="14.0" layoutY="312.0" prefHeight="25.0" prefWidth="320.0">
@@ -64,22 +64,22 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="166.0" text="число" />
+            <TextField fx:id="weight" prefHeight="25.0" prefWidth="166.0" text="число" />
          </children>
       </HBox>
       <VBox layoutX="461.0" layoutY="263.0" prefHeight="77.0" prefWidth="187.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="189.0" text="Добавить упражнение" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="187.0" text="Удалить упражнение" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="194.0" text="Сохранить тренировку" />
+            <Button mnemonicParsing="false" onAction="#addExercise" prefHeight="25.0" prefWidth="189.0" text="Добавить упражнение" />
+            <Button mnemonicParsing="false" onAction="#delExercise" prefHeight="25.0" prefWidth="187.0" text="Удалить упражнение" />
+            <Button mnemonicParsing="false" onAction="#saveWorkout" prefHeight="25.0" prefWidth="194.0" text="Сохранить тренировку" />
          </children>
       </VBox>
-      <TableView layoutX="359.0" layoutY="14.0" prefHeight="225.0" prefWidth="390.0">
+      <TableView fx:id="exerciseTable" editable="true" layoutX="359.0" layoutY="14.0" prefHeight="225.0" prefWidth="390.0">
         <columns>
-          <TableColumn prefWidth="99.0" text="Упражнение" />
-          <TableColumn prefWidth="114.0" text="Кол-во подходов" />
-            <TableColumn prefWidth="120.0" text="Кол-во повторений" />
-            <TableColumn prefWidth="56.0" text="Вес (кг)" />
+          <TableColumn fx:id="nameCol" prefWidth="99.0" text="Упражнение" />
+          <TableColumn fx:id="setsCol" prefWidth="114.0" text="Кол-во подходов" />
+            <TableColumn fx:id="repsCol" prefWidth="120.0" text="Кол-во повторений" />
+            <TableColumn fx:id="weightCol" prefWidth="56.0" text="Вес (кг)" />
         </columns>
       </TableView>
    </children>
