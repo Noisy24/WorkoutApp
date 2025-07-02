@@ -67,11 +67,10 @@
                 <TextField prefHeight="25.0" prefWidth="166.0" text="число" />
             </children>
         </HBox>
-        <VBox layoutX="366.0" layoutY="175.0" prefHeight="50.0" prefWidth="187.0">
+        <VBox layoutX="367.0" layoutY="164.0" prefHeight="50.0" prefWidth="187.0">
             <children>
-                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="189.0" text="Добавить упражнение" />
-                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="187.0" text="Удалить упражнение" />
                 <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="194.0" text="Сохранить тренировку" />
+                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="187.0" text="Стереть данные" />
             </children>
         </VBox>
     </children>
