@@ -1,26 +1,20 @@
 package com.example.testproject;
 
+import java.time.LocalDate;
+import java.util.List;
 
 public class Workout {
-    private String date;
-    private String exercise;
-    private int sets;
-    private int reps;
-    private double weight;
+    private LocalDate date;
+    private String type;
+    private List<Exercise> exercises;
 
-    public Workout(String date, String exercise, int sets, int reps, double weight) {
+    public Workout(LocalDate date, String type, List<Exercise> exercises) {
         this.date = date;
-        this.exercise = exercise;
-        this.sets = sets;
-        this.reps = reps;
-        this.weight = weight;
+        this.type = type;
+        this.exercises = exercises;
     }
 
-    // Геттеры
-    public String getDate() { return date; }
-    public String getExercise() { return exercise; }
-    public int getSets() { return sets; }
-    public int getReps() { return reps; }
-    public double getWeight() { return weight; }
+    public LocalDate getDate() { return date; }
+    public String getType() { return type; }
+    public List<Exercise> getExercises() { return exercises; }
 }
-
