@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.testproject.AddWorkout"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testproject.AddWorkout">
+    <children>
+        <Button layoutX="274.0" layoutY="361.0" mnemonicParsing="false" text="Назад" />
+        <HBox layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="320.0">
+            <children>
+                <Label prefHeight="25.0" prefWidth="158.0" text="Дата тренировки">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <DatePicker prefHeight="25.0" prefWidth="167.0" />
+            </children>
+        </HBox>
+        <HBox layoutX="14.0" layoutY="64.0" prefHeight="25.0" prefWidth="320.0">
+            <children>
+                <Label prefHeight="25.0" prefWidth="158.0" text="Тип тренировки">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField prefHeight="25.0" prefWidth="163.0" text="название" />
+            </children>
+        </HBox>
+        <HBox layoutX="14.0" layoutY="164.0" prefHeight="25.0" prefWidth="320.0">
+            <children>
+                <Label prefHeight="25.0" prefWidth="158.0" text="Упражнение">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField prefHeight="25.0" prefWidth="163.0" text="название" />
+            </children>
+        </HBox>
+        <HBox layoutX="14.0" layoutY="213.0" prefHeight="25.0" prefWidth="320.0">
+            <children>
+                <Label prefHeight="25.0" prefWidth="158.0" text="Кол-во подходов">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField prefHeight="25.0" prefWidth="164.0" text="число" />
+            </children>
+        </HBox>
+        <HBox layoutX="14.0" layoutY="263.0" prefHeight="25.0" prefWidth="320.0">
+            <children>
+                <Label prefHeight="25.0" prefWidth="158.0" text="Кол-во повторений">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField prefHeight="25.0" prefWidth="168.0" text="число" />
+            </children>
+        </HBox>
+        <HBox layoutX="14.0" layoutY="312.0" prefHeight="25.0" prefWidth="320.0">
+            <children>
+                <Label prefHeight="25.0" prefWidth="158.0" text="Вес (кг)">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField prefHeight="25.0" prefWidth="166.0" text="число" />
+            </children>
+        </HBox>
+        <VBox layoutX="366.0" layoutY="175.0" prefHeight="50.0" prefWidth="187.0">
+            <children>
+                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="189.0" text="Добавить упражнение" />
+                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="187.0" text="Удалить упражнение" />
+                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="194.0" text="Сохранить тренировку" />
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>
