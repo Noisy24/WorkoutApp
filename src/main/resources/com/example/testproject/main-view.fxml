@@ -13,7 +13,7 @@
                         <Font name="Calibri" size="14.0" />
                     </font>
                 </Button>
-                <Button layoutX="2.0" layoutY="256.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" style="-fx-background-color: #FFD700;" text="Удалить тренировку">
+                <Button fx:id="deleteButton" layoutX="2.0" layoutY="256.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" prefHeight="27.0" prefWidth="173.0" style="-fx-background-color: #FFD700;" text="Удалить тренировку">
                     <font>
                         <Font name="Calibri" size="14.0" />
                     </font>

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +25,8 @@ public class HelloController {
     protected TableColumn<Workout, LocalDate> dateColumn;
     @FXML
     protected TableColumn<Workout, String> typeColumn;
+    @FXML
+    private Button deleteButton;
 
     @FXML
     public void initialize() {
@@ -85,6 +88,12 @@ public class HelloController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    protected void onDeleteButtonClick()
+    {
+        DeleteWorkout.delete(workoutTable);
     }
 
 }

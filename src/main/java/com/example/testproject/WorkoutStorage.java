@@ -6,16 +6,19 @@ import java.time.LocalDate;
 import java.util.*;
 
 
-public class WorkoutStorage {
+public class WorkoutStorage
+{
     private static final Map<LocalDate, Workout> workouts = new TreeMap<>();
     private static final ObservableList<Workout> workoutList = FXCollections.observableArrayList();
 
-    public static void addWorkout(Workout workout) {
+    public static void addWorkout(Workout workout)
+    {
         workouts.put(workout.getDate(), workout);
         refreshList();
     }
 
-    public static void removeWorkout(LocalDate date) {
+    public static void removeWorkout(LocalDate date)
+    {
         workouts.remove(date);
         refreshList();
     }
@@ -39,4 +42,5 @@ public class WorkoutStorage {
     public static boolean containsDate(LocalDate date) {
         return workouts.containsKey(date);
     }
+
 }
