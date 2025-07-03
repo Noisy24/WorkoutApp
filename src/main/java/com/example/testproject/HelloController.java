@@ -1,18 +1,37 @@
 package com.example.testproject;
 
+import java.time.LocalDate;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class HelloController {
+    @FXML
+    protected TableView<Workout> workoutTable;
+    @FXML
+    protected TableColumn<Workout, LocalDate> dateColumn;
+    @FXML
+    protected TableColumn<Workout, String> typeColumn;
+
+    @FXML
+    public void initialize() {
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
+
+        workoutTable.setItems(WorkoutStorage.getObservableList());
+    }
 
     @FXML
     protected void handleAddWorkoutButton() {

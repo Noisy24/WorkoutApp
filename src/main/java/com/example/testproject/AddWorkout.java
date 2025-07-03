@@ -47,13 +47,14 @@ public class AddWorkout {
         weightCol.setCellValueFactory(new PropertyValueFactory<>("weight"));
 
 
-
         exerciseTable.setItems(exercises);
     }
+
     @FXML
     public void addExercise(ActionEvent actionEvent) {
         exercises.add(new Exercise(name, sets, reps, weight));
     }
+
     @FXML
     public void delExercise(ActionEvent actionEvent) {
         // Получаем выбранную строку
@@ -72,17 +73,40 @@ public class AddWorkout {
             alert.showAndWait();
         }
     }
+
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Ошибка");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
     @FXML
     public void saveWorkout(ActionEvent actionEvent) {
         LocalDate date = datePicker.getValue();
         String type = workoutType.getText();
         List<Exercise> exercisesList = new ArrayList<>(exercises);
 
-        // Сохранение тренировки (здесь можно добавить логику сохранения)
+        // Проверка на пустые поля
+        if (date == null || type.isBlank() || exercisesList.isEmpty()) {
+            showAlert("Пожалуйста, заполните все поля и добавьте хотя бы одно упражнение.");
+            return;
+        }
+
+        if (WorkoutStorage.containsDate(date)) {
+            showAlert("Тренировка с этой датой уже существует.");
+            return;
+        }
+
+        Workout workout = new Workout(date, type, exercisesList);
+        WorkoutStorage.addWorkout(workout);
+
+        // Закрываем окно
+        Stage stage = (Stage) datePicker.getScene().getWindow();
+        stage.close();
+
         System.out.println("Сохранена тренировка: " + date + ", " + type + ", " + exercisesList);
     }
-    @FXML
-    public void back(ActionEvent actionEvent) {
 
-    }
 }

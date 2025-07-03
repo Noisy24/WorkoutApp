@@ -35,10 +35,10 @@
                     </font>
                 </Label>
             </children></Pane>
-      <TableView layoutX="300.0" layoutY="138.0" prefHeight="366.0" prefWidth="374.0">
+      <TableView fx:id="workoutTable" layoutX="300.0" layoutY="138.0" prefHeight="366.0" prefWidth="374.0">
         <columns>
-          <TableColumn prefWidth="181.0" text="Дата" />
-          <TableColumn prefWidth="191.0" text="Тип тренировки" />
+          <TableColumn fx:id="dateColumn" prefWidth="181.0" text="Дата" />
+          <TableColumn fx:id="typeColumn" prefWidth="191.0" text="Тип тренировки" />
         </columns>
       </TableView>
     </children>
