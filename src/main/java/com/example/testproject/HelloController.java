@@ -15,6 +15,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 import java.io.IOException;
 
@@ -30,10 +32,23 @@ public class HelloController {
 
     @FXML
     public void initialize() {
+        // Привязка данных к колонкам
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
+        // Устанавливаем список тренировок в таблицу
         workoutTable.setItems(WorkoutStorage.getObservableList());
+
+        // Включаем сортировку для каждой колонки
+        dateColumn.setSortable(true);
+        typeColumn.setSortable(true);
+
+        // Устанавливаем компараторы для каждой колонки
+        dateColumn.setComparator(LocalDate::compareTo); // Сортировка по дате
+        typeColumn.setComparator(String.CASE_INSENSITIVE_ORDER); // Сортировка по типу (без учёта регистра)
+
+        // Делаем колонки сортируемыми через клик пользователя
+        workoutTable.getColumns().setAll(dateColumn, typeColumn);
     }
 
     @FXML
