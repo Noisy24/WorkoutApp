@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.scene.control.TextFormatter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -48,6 +49,24 @@ public class AddWorkout {
 
 
         exerciseTable.setItems(exercises);
+
+        // Запрещаем редактирование текста DatePicker
+        datePicker.setEditable(false);
+        datePicker.getEditor().setEditable(false);
+
+        // Разрешаем только буквы и пробелы в полях "name" и "workoutType"
+        name.setTextFormatter(new TextFormatter<>(change ->
+                change.getControlNewText().matches("[a-zA-Zа-яА-Я\\s]*") ? change : null));
+        workoutType.setTextFormatter(new TextFormatter<>(change ->
+                change.getControlNewText().matches("[a-zA-Zа-яА-Я\\s]*") ? change : null));
+
+        // Ограничиваем ввод только числами
+        sets.setTextFormatter(new TextFormatter<>(change ->
+                change.getControlNewText().matches("\\d*") ? change : null));
+        reps.setTextFormatter(new TextFormatter<>(change ->
+                change.getControlNewText().matches("\\d*") ? change : null));
+        weight.setTextFormatter(new TextFormatter<>(change ->
+                change.getControlNewText().matches("\\d*(\\.\\d*)?") ? change : null));
     }
 
     @FXML

@@ -13,7 +13,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <DatePicker fx:id="datePicker" prefHeight="25.0" prefWidth="167.0" promptText="число" />
+            <DatePicker fx:id="datePicker" prefHeight="25.0" prefWidth="167.0" promptText="выберите дату" />
          </children>
       </HBox>
       <HBox layoutX="14.0" layoutY="64.0" prefHeight="25.0" prefWidth="320.0">
