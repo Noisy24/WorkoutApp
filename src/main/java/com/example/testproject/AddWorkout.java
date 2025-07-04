@@ -53,6 +53,12 @@ public class AddWorkout {
     @FXML
     public void addExercise(ActionEvent actionEvent) {
         exercises.add(new Exercise(name, sets, reps, weight));
+        name.clear();
+        sets.clear();
+        reps.clear();
+        weight.clear();
+        datePicker.setDisable(true);
+        workoutType.setDisable(true);
     }
 
     @FXML
