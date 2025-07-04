@@ -26,6 +26,7 @@
                 <Label layoutX="6.0" layoutY="469.0" prefHeight="17.0" prefWidth="164.0" text="               Связь с нами" textAlignment="CENTER" />
                 <Button layoutX="14.0" layoutY="494.0" mnemonicParsing="false" style="-fx-background-color: #00FFFF;" text="➣" />
             <Button layoutX="3.0" layoutY="202.0" mnemonicParsing="false" onAction="#handleChangeWorkoutButton" prefHeight="34.0" prefWidth="173.0" text="Измеить тренировку" />
+            <Button layoutX="2.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleShowWorkoutButton" prefHeight="34.0" prefWidth="173.0" text="Просмотреть тренировку" />
             </children></Pane>
         <Pane layoutX="176.0" prefHeight="70.0" prefWidth="624.0" style="-fx-background-color: #C0C0C0; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 2px; -fx-border-style: solid;">
             <children>

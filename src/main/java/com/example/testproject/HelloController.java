@@ -125,6 +125,39 @@ public class HelloController {
     }
 
     @FXML
+    protected void handleShowWorkoutButton() {
+        Workout selectedWorkout = workoutTable.getSelectionModel().getSelectedItem(); // TableView с тренировками
+        if (selectedWorkout == null) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Предупреждение");
+            alert.setHeaderText(null);
+            alert.setContentText("Пожалуйста, выберите тренировку для редактирования.");
+            alert.showAndWait();
+            return;
+        }
+        try {
+            // Загружаем FXML нового окна
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("show-workout.fxml"));
+            Parent root = loader.load();
+
+            // Получаем контроллер
+            ShowWorkout controller = loader.getController();
+
+            // Передаём тренировку в контроллер
+            controller.setWorkoutToEdit(selectedWorkout);
+
+            // Создаём новое окно
+            Stage stage = new Stage();
+            stage.setTitle("Добавить тренировку");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL); // блокирует главное окно, пока не закроют это
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     protected void onDeleteButtonClick()
     {
         DeleteWorkout.delete(workoutTable);

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500" prefWidth="700" style="-fx-background-color: #f0f0f0; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testproject.ShowWorkout">
+
+    <TableView fx:id="exercisesTable" prefHeight="400" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20">
+        <columns>
+            <TableColumn fx:id="nameColumn" prefWidth="200" text="Упражнение" />
+            <TableColumn fx:id="setsColumn" prefWidth="100" text="Подходы" />
+            <TableColumn fx:id="repsColumn" prefWidth="100" text="Повторения" />
+            <TableColumn fx:id="weightColumn" prefWidth="100" text="Вес (кг)" />
+        </columns>
+    </TableView>
+</AnchorPane>
