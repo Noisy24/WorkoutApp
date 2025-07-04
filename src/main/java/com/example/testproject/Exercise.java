@@ -23,8 +23,25 @@ public class Exercise {
 
     }
 
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public void setReps(int reps) {
+        this.reps = reps;
+    }
+
+    public void setSets(int sets) {
+        this.sets = sets;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getName() { return name; }
     public int getSets() { return sets; }
     public int getReps() { return reps; }
     public double getWeight() { return weight; }
+
 }

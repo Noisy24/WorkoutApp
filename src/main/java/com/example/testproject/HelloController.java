@@ -4,12 +4,9 @@ import java.time.LocalDate;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TableColumn;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -71,10 +68,25 @@ public class HelloController {
 
     @FXML
     protected void handleChangeWorkoutButton() {
+        Workout selectedWorkout = workoutTable.getSelectionModel().getSelectedItem(); // TableView с тренировками
+        if (selectedWorkout == null) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Предупреждение");
+            alert.setHeaderText(null);
+            alert.setContentText("Пожалуйста, выберите тренировку для редактирования.");
+            alert.showAndWait();
+            return;
+        }
         try {
             // Загружаем FXML нового окна
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("change-workout.fxml"));
             Parent root = loader.load();
+
+            // Получаем контроллер
+            ChangeWorkout controller = loader.getController();
+
+            // Передаём тренировку в контроллер
+            controller.setWorkoutToEdit(selectedWorkout);
 
             // Создаём новое окно
             Stage stage = new Stage();
@@ -82,6 +94,9 @@ public class HelloController {
             stage.setScene(new Scene(root));
             stage.initModality(Modality.APPLICATION_MODAL); // блокирует главное окно, пока не закроют это
             stage.showAndWait();
+
+            // После закрытия окна обновляем таблицу
+            workoutTable.refresh();
         } catch (IOException e) {
             e.printStackTrace();
         }
