@@ -67,6 +67,16 @@ public class AddWorkout {
                 change.getControlNewText().matches("\\d*") ? change : null));
         weight.setTextFormatter(new TextFormatter<>(change ->
                 change.getControlNewText().matches("\\d*(\\.\\d*)?") ? change : null));
+        weight.focusedProperty().addListener((obs, wasFocused, isNowFocused) -> {
+            if (!isNowFocused && !weight.getText().isEmpty()) {
+                try {
+                    double value = Double.parseDouble(weight.getText());
+                    if (value > 1000.0) {
+                        weight.setText("1000");
+                    }
+                } catch (NumberFormatException ignored) {}
+            }
+        });
     }
 
     @FXML
