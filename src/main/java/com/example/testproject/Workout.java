@@ -1,9 +1,10 @@
 package com.example.testproject;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Workout {
+public class Workout implements Serializable {
     private LocalDate date;
     private String type;
     private List<Exercise> exercises;

@@ -106,6 +106,7 @@ public class ChangeWorkout {
 
         // Обновим список в WorkoutStorage
         WorkoutStorage.getObservableList().setAll(WorkoutStorage.getAllWorkouts());
+        WorkoutStorage.saveToFile();
 
         // Закрываем окно
         Stage stage = (Stage) exercisesTable.getScene().getWindow();
