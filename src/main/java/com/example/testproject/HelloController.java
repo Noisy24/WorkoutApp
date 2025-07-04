@@ -16,6 +16,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class HelloController {
     @FXML
@@ -106,8 +109,9 @@ public class HelloController {
     protected void handleStatsWorkoutButton() {
         try {
             // Загружаем FXML нового окна
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("change-workout.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("stats-workout.fxml"));
             Parent root = loader.load();
+
 
             // Создаём новое окно
             Stage stage = new Stage();
