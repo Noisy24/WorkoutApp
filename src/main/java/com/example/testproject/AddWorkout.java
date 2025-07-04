@@ -106,7 +106,7 @@ public class AddWorkout {
         Stage stage = (Stage) datePicker.getScene().getWindow();
         stage.close();
 
-        System.out.println("Сохранена тренировка: " + date + ", " + type + ", " + exercisesList);
+        System.out.println("Сохранена тренировка: " + date + ", " + type);
     }
 
 }

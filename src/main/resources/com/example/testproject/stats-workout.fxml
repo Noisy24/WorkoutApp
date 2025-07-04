@@ -5,10 +5,22 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.testproject.StatsWorkout"
             prefHeight="400.0" prefWidth="600.0">
+    <LineChart fx:id="lineChart" layoutX="14.0" layoutY="14.0" prefHeight="400.0" prefWidth="600.0">
+        <xAxis>
+            <CategoryAxis label="Дата"/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Объём"/>
+        </yAxis>
+    </LineChart>
 
 </AnchorPane>
