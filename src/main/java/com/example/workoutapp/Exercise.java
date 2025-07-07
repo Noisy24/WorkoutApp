@@ -1,4 +1,4 @@
-package com.example.testproject;
+package com.example.workoutapp;
 
 import javafx.scene.control.TextField;
 

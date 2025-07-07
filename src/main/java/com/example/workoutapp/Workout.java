@@ -1,4 +1,4 @@
-package com.example.testproject;
+package com.example.workoutapp;
 
 import java.io.Serializable;
 import java.time.LocalDate;

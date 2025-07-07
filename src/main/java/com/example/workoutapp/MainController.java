@@ -1,12 +1,10 @@
-package com.example.testproject;
+package com.example.workoutapp;
 
 import java.time.LocalDate;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -16,11 +14,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 
-public class HelloController {
+public class MainController {
     @FXML
     protected TableView<Workout> workoutTable;
     @FXML
@@ -55,7 +50,7 @@ public class HelloController {
     protected void handleAddWorkoutButton() {
         try {
             // Загружаем FXML нового окна
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("add-workout.fxml"));
+            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("add-workout.fxml"));
             Parent root = loader.load();
 
             // Создаём новое окно
@@ -82,7 +77,7 @@ public class HelloController {
         }
         try {
             // Загружаем FXML нового окна
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("change-workout.fxml"));
+            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("change-workout.fxml"));
             Parent root = loader.load();
 
             // Получаем контроллер
@@ -109,7 +104,7 @@ public class HelloController {
     protected void handleStatsWorkoutButton() {
         try {
             // Загружаем FXML нового окна
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("stats-workout.fxml"));
+            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("stats-workout.fxml"));
             Parent root = loader.load();
 
 
@@ -137,7 +132,7 @@ public class HelloController {
         }
         try {
             // Загружаем FXML нового окна
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("show-workout.fxml"));
+            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("show-workout.fxml"));
             Parent root = loader.load();
 
             // Получаем контроллер

@@ -1,12 +1,7 @@
-package com.example.testproject;
+package com.example.workoutapp;
 
-import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
 import javafx.scene.control.TableView;
-
-import java.time.LocalDate;
 
 public class DeleteWorkout
 {

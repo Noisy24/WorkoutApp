@@ -1,4 +1,4 @@
-package com.example.testproject;
+package com.example.workoutapp;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -91,13 +91,11 @@ public class AddWorkout {
     }
 
     @FXML
-    public void delExercise(ActionEvent actionEvent) {
-        // Получаем выбранную строку
+    public void delExercise(ActionEvent actionEvent) { // выбор, проверка и удаление нужной строчки
         Exercise selectedExercise = exerciseTable.getSelectionModel().getSelectedItem();
 
-        // Проверяем, что что-то выбрано
         if (selectedExercise != null) {
-            // Удаляем из списка, который привязан к таблице
+
             exercises.remove(selectedExercise);
         } else {
             // Можно показать предупреждение, если ничего не выбрано
