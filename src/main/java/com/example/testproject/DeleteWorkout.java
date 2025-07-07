@@ -11,22 +11,10 @@ import java.time.LocalDate;
 public class DeleteWorkout
 {
     public static void delete(TableView<Workout> table) {
-        if (table == null || table.getSelectionModel() == null)
-        {
-            showAlert("Ошибка: таблица не готова");
-            return;
-        }
-
         Workout selected = table.getSelectionModel().getSelectedItem();
         if (selected == null)
         {
             showAlert("Выберите тренировку для удаления");
-            return;
-        }
-
-        if (selected.getDate() == null)
-        {
-            showAlert("Ошибка: у тренировки нет даты");
             return;
         }
 
