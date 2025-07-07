@@ -1,0 +1,95 @@
+/* Основные цвета */
+.root {
+    -fx-base: #f8f8f8;          /* Светлый фон */
+    -fx-background: #ffffff;     /* Основной фон */
+    -fx-control-inner-background: #ffffff; /* Внутренний фон элементов */
+    -fx-accent: #FF7043;        /* Оранжевый акцент (как в Material Design) */
+    -fx-default-button: #64B5F6; /* Пастельно-синий для кнопок */
+    -fx-focus-color: #B3E5FC;    /* Цвет фокуса (мягкий голубой) */
+    -fx-text-fill: #333333;      /* Тёмный текст для контраста */
+}
+
+/* Стиль боковой панели (как в Notion) */
+.pane {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 1px 0 0;
+}
+
+/* Стиль кнопок (современные, с плавными тенями) */
+.button {
+    -fx-background-color: white;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-text-fill: #333333;
+    -fx-padding: 8px 16px;
+    -fx-font-family: 'Segoe UI', 'Calibri', sans-serif;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 3, 0, 0, 1);
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #f0f0f0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 1);
+}
+
+.button:pressed {
+    -fx-background-color: #e0e0e0;
+}
+
+/* Акцентные кнопки (оранжевые) */
+.button:default {
+    -fx-background-color: #FF7043;
+    -fx-text-fill: white;
+}
+
+.button:default:hover {
+    -fx-background-color: #FF5722;
+}
+
+/* Таблица (чистый, минималистичный стиль) */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #e0e0e0;
+    -fx-text-fill: #555555;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #fafafa;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #B3E5FC;
+    -fx-text-fill: black;
+}
+
+/* Заголовок (как в Notion) */
+.label.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-font-family: 'Segoe UI', 'Calibri', sans-serif;
+}
+
+/* Эффекты при наведении (современные) */
+.pane:hover, .button:hover, .table-view:hover {
+    -fx-transition: all 0.2s ease;
+}

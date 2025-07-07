@@ -8,8 +8,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 
-public class WorkoutStorage
-{
+public class WorkoutStorage {
     private static final Map<LocalDate, Workout> workouts = new TreeMap<>();
     private static final ObservableList<Workout> workoutList = FXCollections.observableArrayList();
 
