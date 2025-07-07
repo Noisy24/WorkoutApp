@@ -12,7 +12,6 @@ public class DeleteWorkout
             showAlert("Выберите тренировку для удаления");
             return;
         }
-
         WorkoutStorage.removeWorkout(selected.getDate());
     }
 

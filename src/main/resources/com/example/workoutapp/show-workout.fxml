@@ -3,14 +3,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="500" prefWidth="700" style="-fx-background-color: #f0f0f0; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.workoutapp.ShowWorkout">
+<AnchorPane prefHeight="500" prefWidth="700" style=": 20;" stylesheets="@show-workout.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.workoutapp.ShowWorkout">
 
-    <TableView fx:id="exercisesTable" prefHeight="400" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20">
+    <TableView fx:id="exercisesTable" layoutX="60.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400" prefWidth="400.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
         <columns>
             <TableColumn fx:id="nameColumn" prefWidth="200" text="Упражнение" />
-            <TableColumn fx:id="setsColumn" prefWidth="100" text="Подходы" />
-            <TableColumn fx:id="repsColumn" prefWidth="100" text="Повторения" />
-            <TableColumn fx:id="weightColumn" prefWidth="100" text="Вес (кг)" />
+            <TableColumn fx:id="setsColumn" prefWidth="125.0" text="Подходы" />
+            <TableColumn fx:id="repsColumn" prefWidth="148.0" text="Повторения" />
+            <TableColumn fx:id="weightColumn" prefWidth="106.0" text="Вес (кг)" />
         </columns>
     </TableView>
 </AnchorPane>

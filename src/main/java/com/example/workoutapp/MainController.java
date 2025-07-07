@@ -22,19 +22,14 @@ public class MainController {
     protected TableColumn<Workout, LocalDate> dateColumn;
     @FXML
     protected TableColumn<Workout, String> typeColumn;
-    @FXML
-    private Button deleteButton;
 
     @FXML
     public void initialize() {
-        // Привязка данных к колонкам
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
-        // Устанавливаем список тренировок в таблицу
         workoutTable.setItems(WorkoutStorage.getObservableList());
 
-        // Включаем сортировку для каждой колонки
         dateColumn.setSortable(true);
         typeColumn.setSortable(true);
 
@@ -42,7 +37,6 @@ public class MainController {
         dateColumn.setComparator(LocalDate::compareTo); // Сортировка по дате
         typeColumn.setComparator(String.CASE_INSENSITIVE_ORDER); // Сортировка по типу (без учёта регистра)
 
-        // Делаем колонки сортируемыми через клик пользователя
         workoutTable.getColumns().setAll(dateColumn, typeColumn);
     }
 
@@ -76,21 +70,17 @@ public class MainController {
             return;
         }
         try {
-            // Загружаем FXML нового окна
             FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("change-workout.fxml"));
             Parent root = loader.load();
 
-            // Получаем контроллер
             ChangeWorkout controller = loader.getController();
 
-            // Передаём тренировку в контроллер
             controller.setWorkoutToEdit(selectedWorkout);
 
-            // Создаём новое окно
             Stage stage = new Stage();
-            stage.setTitle("Добавить тренировку");
+            stage.setTitle("Изменить тренировку");
             stage.setScene(new Scene(root));
-            stage.initModality(Modality.APPLICATION_MODAL); // блокирует главное окно, пока не закроют это
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.showAndWait();
 
             // После закрытия окна обновляем таблицу
@@ -103,16 +93,14 @@ public class MainController {
     @FXML
     protected void handleStatsWorkoutButton() {
         try {
-            // Загружаем FXML нового окна
             FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("stats-workout.fxml"));
             Parent root = loader.load();
 
 
-            // Создаём новое окно
             Stage stage = new Stage();
-            stage.setTitle("Добавить тренировку");
+            stage.setTitle("Статистика тренировок");
             stage.setScene(new Scene(root));
-            stage.initModality(Modality.APPLICATION_MODAL); // блокирует главное окно, пока не закроют это
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.showAndWait();
         } catch (IOException e) {
             e.printStackTrace();
@@ -131,21 +119,17 @@ public class MainController {
             return;
         }
         try {
-            // Загружаем FXML нового окна
             FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("show-workout.fxml"));
             Parent root = loader.load();
 
-            // Получаем контроллер
             ShowWorkout controller = loader.getController();
 
-            // Передаём тренировку в контроллер
             controller.setWorkoutToEdit(selectedWorkout);
 
-            // Создаём новое окно
             Stage stage = new Stage();
-            stage.setTitle("Добавить тренировку");
+            stage.setTitle("Просмотр тренировку");
             stage.setScene(new Scene(root));
-            stage.initModality(Modality.APPLICATION_MODAL); // блокирует главное окно, пока не закроют это
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.showAndWait();
         } catch (IOException e) {
             e.printStackTrace();

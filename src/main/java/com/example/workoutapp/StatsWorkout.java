@@ -5,7 +5,6 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 
 public class StatsWorkout {
-
     @FXML
     private LineChart<String, Number> lineChart;
 
@@ -21,7 +20,6 @@ public class StatsWorkout {
 
             series.getData().add(new XYChart.Data<>(workout.getDate().toString(), volume));
         }
-
         lineChart.getData().add(series);
     }
 }

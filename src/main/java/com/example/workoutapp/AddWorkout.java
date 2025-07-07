@@ -98,7 +98,6 @@ public class AddWorkout {
 
             exercises.remove(selectedExercise);
         } else {
-            // Можно показать предупреждение, если ничего не выбрано
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Предупреждение");
             alert.setHeaderText(null);
@@ -121,7 +120,6 @@ public class AddWorkout {
         String type = workoutType.getText();
         List<Exercise> exercisesList = new ArrayList<>(exercises);
 
-        // Проверка на пустые поля
         if (date == null || type.isBlank() || exercisesList.isEmpty()) {
             showAlert("Пожалуйста, заполните все поля и добавьте хотя бы одно упражнение.");
             return;
@@ -135,7 +133,6 @@ public class AddWorkout {
         Workout workout = new Workout(date, type, exercisesList);
         WorkoutStorage.addWorkout(workout);
 
-        // Закрываем окно
         Stage stage = (Stage) datePicker.getScene().getWindow();
         stage.close();
 

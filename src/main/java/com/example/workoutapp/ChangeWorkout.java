@@ -46,7 +46,6 @@ public class ChangeWorkout {
         weightColumn.setCellFactory(column -> createWeightCell());
 
 
-        // Обработка редактирования
         nameColumn.setOnEditCommit(event -> {
             Exercise exercise = event.getRowValue();
             exercise.setName(event.getNewValue());
@@ -68,11 +67,10 @@ public class ChangeWorkout {
         });
 
 
-        exercisesTable.setItems(editableExercises); // пустой на старте
+        exercisesTable.setItems(editableExercises);
     }
 
 
-    // Метод для показа ошибок
     private void showInputError(String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Ошибка ввода");
@@ -81,7 +79,6 @@ public class ChangeWorkout {
         alert.showAndWait();
     }
 
-    // Метод для имени (только буквы, пробелы и дефис)
     private TableCell<Exercise, String> createNameCell() {
         TextFieldTableCell<Exercise, String> cell = new TextFieldTableCell<>(new DefaultStringConverter()) {
             @Override
@@ -90,7 +87,7 @@ public class ChangeWorkout {
                 TextField textField = (TextField) getGraphic();
                 textField.setTextFormatter(new TextFormatter<>(change -> {
                     String newText = change.getControlNewText();
-                    if (newText.matches("[a-zA-Zа-яА-Я\\s-]*")) { // Только буквы, пробелы и дефис
+                    if (newText.matches("[a-zA-Zа-яА-Я\\s-]*")) {
                         return change;
                     }
                     return null;
@@ -116,7 +113,6 @@ public class ChangeWorkout {
     }
 
 
-    // Метод для подходов (1-20)
     private TableCell<Exercise, Integer> createSetsCell() {
         TextFieldTableCell<Exercise, Integer> cell = new TextFieldTableCell<>(new IntegerStringConverter()) {
             @Override
@@ -124,7 +120,7 @@ public class ChangeWorkout {
                 super.startEdit();
                 TextField textField = (TextField) getGraphic();
                 textField.setTextFormatter(new TextFormatter<>(change -> {
-                    if (change.getControlNewText().matches("\\d*")) { // Только цифры
+                    if (change.getControlNewText().matches("\\d*")) {
                         return change;
                     }
                     return null;
@@ -153,7 +149,6 @@ public class ChangeWorkout {
         return cell;
     }
 
-    // Метод для повторений (1-100)
     private TableCell<Exercise, Integer> createRepsCell() {
         TextFieldTableCell<Exercise, Integer> cell = new TextFieldTableCell<>(new IntegerStringConverter()) {
             @Override
@@ -161,7 +156,7 @@ public class ChangeWorkout {
                 super.startEdit();
                 TextField textField = (TextField) getGraphic();
                 textField.setTextFormatter(new TextFormatter<>(change -> {
-                    if (change.getControlNewText().matches("\\d*")) { // Только цифры
+                    if (change.getControlNewText().matches("\\d*")) {
                         return change;
                     }
                     return null;
@@ -190,7 +185,6 @@ public class ChangeWorkout {
         return cell;
     }
 
-    // Метод для веса (0-1000 кг)
     private TableCell<Exercise, Double> createWeightCell() {
         TextFieldTableCell<Exercise, Double> cell = new TextFieldTableCell<>(new DoubleStringConverter()) {
             @Override
@@ -199,10 +193,10 @@ public class ChangeWorkout {
                 TextField textField = (TextField) getGraphic();
                 textField.setTextFormatter(new TextFormatter<>(change -> {
                     String newText = change.getControlNewText();
-                    if (newText.isEmpty() || newText.matches("\\d*\\.?\\d*")) { // Разрешаем только числа и точку
+                    if (newText.isEmpty() || newText.matches("\\d*\\.?\\d*")) {
                         return change;
                     }
-                    return null; // Блокируем ввод
+                    return null;
                 }));
             }
 
@@ -228,12 +222,6 @@ public class ChangeWorkout {
         return cell;
     }
 
-
-
-
-
-
-
     public void setWorkoutToEdit(Workout workout) {
         this.originalWorkout = workout;
 
@@ -241,7 +229,6 @@ public class ChangeWorkout {
             editableExercises.setAll(workout.getExercises());
         }
     }
-
 
     @FXML
     private void handleCancel() {
@@ -264,15 +251,12 @@ public class ChangeWorkout {
             return;
         }
 
-        // Заменим упражнения на отредактированные
         originalWorkout.getExercises().clear();
         originalWorkout.getExercises().addAll(editableExercises);
 
-        // Обновим список в WorkoutStorage
         WorkoutStorage.getObservableList().setAll(WorkoutStorage.getAllWorkouts());
         WorkoutStorage.saveToFile();
 
-        // Закрываем окно
         Stage stage = (Stage) exercisesTable.getScene().getWindow();
         stage.close();
     }

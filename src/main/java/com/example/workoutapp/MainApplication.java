@@ -13,7 +13,7 @@ public class MainApplication extends Application {
         WorkoutStorage.loadFromFile();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-        stage.setTitle("Hello!");
+        stage.setTitle("Трекер тренировок");
         stage.setScene(scene);
         stage.show();
     }

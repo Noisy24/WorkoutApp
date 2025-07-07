@@ -74,12 +74,12 @@
          </children>
       </VBox>
       <TableView fx:id="exerciseTable" editable="true" layoutX="359.0" layoutY="14.0" prefHeight="225.0" prefWidth="390.0">
-        <columns>
-          <TableColumn fx:id="nameCol" prefWidth="99.0" text="Упражнение" />
-          <TableColumn fx:id="setsCol" prefWidth="114.0" text="Кол-во подходов" />
+         <columns>
+            <TableColumn fx:id="nameCol" prefWidth="99.0" text="Упражнение" />
+            <TableColumn fx:id="setsCol" prefWidth="114.0" text="Кол-во подходов" />
             <TableColumn fx:id="repsCol" prefWidth="120.0" text="Кол-во повторений" />
             <TableColumn fx:id="weightCol" prefWidth="56.0" text="Вес (кг)" />
-        </columns>
+         </columns>
       </TableView>
    </children>
 </AnchorPane>
