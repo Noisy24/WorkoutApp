@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.workoutapp.AddWorkout">
+<AnchorPane prefHeight="400.0" prefWidth="770.0" stylesheets="@add-workout.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.workoutapp.AddWorkout">
    <children>
       <HBox layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="320.0">
          <children>
@@ -66,11 +66,11 @@
             <TextField fx:id="weight" prefHeight="25.0" prefWidth="166.0" promptText="число" />
          </children>
       </HBox>
-      <VBox layoutX="461.0" layoutY="263.0" prefHeight="77.0" prefWidth="187.0">
+      <VBox alignment="CENTER" layoutX="393.0" layoutY="252.0" prefHeight="138.0" prefWidth="282.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#addExercise" prefHeight="25.0" prefWidth="189.0" text="Добавить упражнение" />
-            <Button mnemonicParsing="false" onAction="#delExercise" prefHeight="25.0" prefWidth="187.0" text="Удалить упражнение" />
-            <Button mnemonicParsing="false" onAction="#saveWorkout" prefHeight="25.0" prefWidth="194.0" text="Сохранить тренировку" />
+            <Button mnemonicParsing="false" onAction="#addExercise" prefHeight="30.0" prefWidth="228.0" text="Добавить упражнение" />
+            <Button mnemonicParsing="false" onAction="#delExercise" prefHeight="30.0" prefWidth="227.0" text="Удалить упражнение" />
+            <Button mnemonicParsing="false" onAction="#saveWorkout" prefHeight="30.0" prefWidth="229.0" text="Сохранить тренировку" />
          </children>
       </VBox>
       <TableView fx:id="exerciseTable" editable="true" layoutX="359.0" layoutY="14.0" prefHeight="225.0" prefWidth="390.0">

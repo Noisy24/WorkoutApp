@@ -1,26 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
 
+<?import javafx.scene.layout.HBox?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.workoutapp.StatsWorkout"
-            prefHeight="400.0" prefWidth="600.0">
-    <LineChart fx:id="lineChart" layoutX="14.0" layoutY="14.0" prefHeight="400.0" prefWidth="600.0">
-        <xAxis>
-            <CategoryAxis label="Дата"/>
-        </xAxis>
-        <yAxis>
-            <NumberAxis label="Объём"/>
-        </yAxis>
-    </LineChart>
+            prefHeight="600.0" prefWidth="800.0">
 
+    <VBox layoutX="14.0" layoutY="14.0" spacing="20" prefWidth="780.0" prefHeight="572.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="10.0">
+
+        <BarChart fx:id="barChart" prefHeight="400.0" prefWidth="760.0">
+            <xAxis>
+                <CategoryAxis label="Дата"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Объём"/>
+            </yAxis>
+        </BarChart>
+
+        <HBox spacing="20" alignment="CENTER" prefHeight="150" prefWidth="760">
+            <VBox spacing="5" style="-fx-border-color: #ccc; -fx-border-radius: 8; -fx-padding: 10; -fx-background-color: #f8f8f8; -fx-background-radius: 8;" alignment="CENTER" prefWidth="230">
+                <Label text="📅 Самая объёмная" style="-fx-font-weight: bold; -fx-font-size: 14;" />
+                <Label fx:id="maxVolumeLabel" text="2025-07-05 — 4300 кг" style="-fx-font-size: 13;" />
+            </VBox>
+
+            <VBox spacing="5" style="-fx-border-color: #ccc; -fx-border-radius: 8; -fx-padding: 10; -fx-background-color: #f8f8f8; -fx-background-radius: 8;" alignment="CENTER" prefWidth="230">
+                <Label text="🔁 Частое упражнение" style="-fx-font-weight: bold; -fx-font-size: 14;" />
+                <Label fx:id="mostFrequentExerciseLabel" text="Жим лёжа (12 раз)" style="-fx-font-size: 13;" />
+            </VBox>
+
+            <VBox spacing="5" style="-fx-border-color: #ccc; -fx-border-radius: 8; -fx-padding: 10; -fx-background-color: #f8f8f8; -fx-background-radius: 8;" alignment="CENTER" prefWidth="230">
+                <Label text="🔥 Наибольший вес" style="-fx-font-weight: bold; -fx-font-size: 14;" />
+                <Label fx:id="heaviestLiftLabel" text="Тяга — 120 кг" style="-fx-font-size: 13;" />
+            </VBox>
+        </HBox>
+
+
+    </VBox>
 </AnchorPane>
